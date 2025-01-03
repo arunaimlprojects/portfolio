@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+    text-decoration: none;
+}
+:root{
+    --bg-color:#171616;
+    --second-bg-color:#212020;
+    --main-color:#7cf03d;
+    --white-color:#fff;
+    --disable-color:#928f8f;
+    --second-maincolor:#1e5500;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    color: var(--white-color);
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2000;
+}
+.logo{
+    font-size: 3rem;
+    color: var(--white-color);
+    font-weight: 700;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+nav a{
+    font-size: 2rem;
+    color: var(--white-color);
+    font-weight: 500;
+    transition: .5s;
+}
+nav a:hover,
+nav a.active{
+    color: var(--main-color);
+}
+#menu-icon{
+    font-size: 4rem;
+    display: none;
+}
+.home{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10rem 9% 2rem;
+    background-color: var(--bg-color);
+}
+.home{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.home-detail h1{
+  font-size: clamp(3.5rem,10vw,5.5rem);
+}
+.home-detail h2{
+    display: inline-block;
+    font-size: 3.2rem;
+    margin-top: -1rem;
+}
+.home-detail h2 span{
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: .07rem var(--main-color);
+    animation: display-text 16s linear infinite;
+    animation-delay: calc(-4s * var(--i));
+}
+@keyframes display-text{
+    25%,60%{
+        display: none;
+    }
+}
+.home-detail h2 span::before{
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    border-right: .2rem solid var(--main-color);
+    color: var(--main-color);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: fill-text 4s linear infinite;
+}
+@keyframes fill-text{
+    10%,
+    100%{
+        width: 0;
+    }
+    70%,
+    90%{
+        width: 100%;
+    }
+}
+.home-detail p{
+    font-size: 1.6rem;
+    margin: 1rem 0 2.5rem;
+}
+.home-detail .btn-sci{
+    display: flex;
+    align-items: center;
+}
+.btn{
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    font-weight: 500;
+    transition: .4s;
+}
+.btn:hover{
+    background: transparent;
+    color: var(--main-color);
+    box-shadow: none;
+}
+.btn-sci .sci{
+    margin-left: 2rem;
+}
+.btn-sci .sci a{
+    display: inline-flex;
+    padding: .8rem;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin:0 .8rem;
+    transition: .5s;
+}
+.btn-sci .sci a:hover{
+    background: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+.home-img .img-box{
+    position: relative;
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.home-img .img-box::before,
+.home-img .img-box::after{
+    content: '';
+    position: absolute;
+    width: 60rem;
+    height: 60rem;
+    background: conic-gradient(transparent, transparent,transparent,var(--main-color));
+    animation: rotate-border 10s linear infinite ;
+    transform: rotate(0deg);
+}
+.home-img .img-box::after{
+    animation-delay: 5s;
+}
+
+@keyframes rotate-border{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.home-img .img-box .img-item{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    border: .1rem solid var(--bg-color);
+    display: flex;
+    z-index: 1;
+    justify-content: center;
+    overflow: hidden;
+}
+.home-img .img-box .img-item img{
+    position: absolute;
+    top:2rem;
+    display: block;
+    width: 110%;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+    border: 1px solid red;
+}
+.skill-section{
+    width: 100%;
+    display: flex;
+    position: relative;
+    background-color: var(#f0f0f0);
+    padding: 3rem 0;
+    color: var(--bg-color);
+}
+.skill-container{
+    position: relative;
+    display: flex;
+    width: 100%;
+    font-size: 2rem;
+    box-shadow: 0 0 1rem var(--disable-color);
+    /* ajdsjsklajdfklaj;flkd */
+}
+.side-container{
+    position: absolute;
+    width: 35%;
+    background-color: var(--white-color);
+    right: 0;
+    top: -2rem;
+    height: 120%;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    background-color: var(--bg-color);
+    color: var(--white-color);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.skills{
+    /* margin-left: 16rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    background: var(--white-color);
+    padding: 2rem;
+    color: var(--white-color);
+    position: relative;
+    width: 70%;
+}
+.skills .skillTxt{
+    text-align: center;
+    background-color: var(--second-maincolor);
+    width: 93%;
+    margin-bottom: 1rem;
+}
+.list-item{
+    width: 93%;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+.cards{
+    width: 30rem;
+    height: 30rem;
+    background: transparent;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+    color: black;
+    box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.5);
+}
+.project-image{
+    width: 80%;
+}
+.mlopsBackimage{
+    color: white;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../assets/images/MLOps-use-cases.png");
+    background-position: center;
+    background-size: cover;
+}
+.dlBackimage{
+    color: white;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../assets/images/dlImage.webp");
+    background-position: center;
+    background-size: cover;
+}
+.genBackimage{
+    color: white;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../assets/images/Generative_AI_\(2\).png");
+    background-position: center;
+    background-size: cover;
+}
+.bottemPosition{
+   position: absolute;
+   bottom: 15px;
+}
+.color{
+    color: white;
+}
+.skillSet{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2rem;
+}
+.about-section{
+    width: 100%;
+    color: white;
+    margin-top: 5rem;
+    padding: 4rem;
+    background-color: var(--bg-color);
+}
+.about-section h2{
+    font-size: 3rem;
+}
+.about-section p{
+    font-size: 1.7rem;
+}
+.contact-sec{
+    width: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.centerDiv{
+    width: 50%;
+    background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
+    box-shadow: 0 0 15px 2
+    px rgba(0, 0, 0, 0.5);
+}
